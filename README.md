@@ -13,7 +13,7 @@ http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/
 
 = Usage =
 Two branches. In master, the plugin replaces the text instantly, either with an empty string or with whatever has been entered in the Setting the last time the user used the plugin.
-In manual, the default 'Howdy' is retained while the Settin remains empty.
+In manual, the default 'Howdy' is retained if the Setting is empty.
 
 = Accessing the Setting =
 
