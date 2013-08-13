@@ -1,4 +1,4 @@
-=== Yodwd Plugin ===
+=== Admin Bar Greeting Plugin ===
 Requires at least: 3.5.2
 Tested up to: 3.7
 Stable tag: 1.0
