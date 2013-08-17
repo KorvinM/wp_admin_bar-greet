@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Admin Greeting
+Plugin Name: Admin Bar Greeting
 Plugin URI: 
 Description: Allows the user to change the default 'Howdy' greeting in the Admin bar. Go to Settings>General to configure with your chosen greeting!
-Version: 1.0
+Version: 1.1
 Author: Korvin M
 Author URI: korvin.org
 License: GPL2
@@ -74,12 +74,12 @@ if(class_exists('kvn_ydwh'))
     
     // replace WordPress Howdy in WordPress 3.3, see http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/
 	function kvn_replace_ydwh( $wp_admin_bar ) {
-		$option = get_option('greeting');
-		$my_account=$wp_admin_bar->get_node('my-account');
-		$newtitle = str_replace( 'Howdy,', $option, $my_account->title );            
+		$ydwh_option = get_option('greeting');
+		$ydwh_my_account=$wp_admin_bar->get_node('my-account');
+		$ydwh_newtitle = str_replace( 'Howdy,', $ydwh_option, $ydwh_my_account->title );            
 		$wp_admin_bar->add_node( array(
 			'id' => 'my-account',
-			'title' => $newtitle,
+			'title' => $ydwh_newtitle,
 		) );
 	}
 	
