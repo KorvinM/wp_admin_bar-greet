@@ -14,7 +14,7 @@ The main function is adapted from a snippet intended for WP 3.3 and above
 http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/ 
 
 ##Usage
-In manual, the default 'Howdy' is retained if the Setting is empty.
+The default 'Howdy' greeting is retained if the Setting is empty.
 
 ##Accessing the Setting
 
