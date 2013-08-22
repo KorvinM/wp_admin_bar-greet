@@ -24,7 +24,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-Master Branch*/
+testing Branch*/
 
 if(!class_exists('kvn_ydwh'))
 {
@@ -70,7 +70,6 @@ if(class_exists('kvn_ydwh'))
 	
     if(isset($kvn_ydwh))
     {
-    }
     
     // replace WordPress Howdy in WordPress 3.3, see http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/
 	function kvn_replace_ydwh( $wp_admin_bar ) {
@@ -84,5 +83,5 @@ if(class_exists('kvn_ydwh'))
 	}
 	
 	add_filter( 'admin_bar_menu', 'kvn_replace_ydwh');
-
+    }
 }
