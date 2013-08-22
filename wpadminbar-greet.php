@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Admin Bar Greeting
+Plugin Name: Toolbar Greeting
 Plugin URI: 
-Description: Allows the user to change the default 'Howdy' greeting in the Admin bar. Go to Settings>General to configure with your chosen greeting!
+Description: Allows the user to change the default 'Howdy' greeting in the Toolbar. Go to Settings>General to configure with your chosen greeting!
 Version: 1.2
 Author: Korvin M
 Author URI: korvin.org

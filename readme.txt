@@ -1,12 +1,13 @@
-=== Admin Bar Greeting Plugin === 
+=== Toolbar Greeting Plugin === 
 Requires at least: WordPress 3.3 
 Tested in: WordPress 3.5.2 
 Tested up to: 3.7 
-Stable tag: 1.0
+Stable tag: 1.2
 
 == Description == 
 
-A WordPress plugin. Allows the user to change the default 'Howdy' greeting in the Admin bar. Go to Settings>General to configure with your chosen greeting! 
+Allows the user to change the default 'Howdy' greeting in the Toolbar. 
+Go to Settings>General to configure with your chosen greeting! 
 
 == Important Notes == 
 
