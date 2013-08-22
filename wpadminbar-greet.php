@@ -70,7 +70,6 @@ if(class_exists('kvn_ydwh'))
 	
     if(isset($kvn_ydwh))
     {
-    }
     
     // replace WordPress Howdy in WordPress 3.3, see http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/
 	function kvn_replace_ydwh( $wp_admin_bar ) {
@@ -86,5 +85,5 @@ if(class_exists('kvn_ydwh'))
 	}
 	
 	add_filter( 'admin_bar_menu', 'kvn_replace_ydwh');
-
+    }
 }
