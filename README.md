@@ -28,9 +28,11 @@ In the WordPress Dashboard, the setting is added to the bottom of Settings>Gener
 * change user-facing instances of 'Admin Bar' to 'Toolbar'
 * add settings link
 * merge manual branch into master
+
 ###1.1
 * clean up readmes
 * namespace vars
+
 ###1.0 
 * Add setting.
 * Git init.
@@ -38,4 +40,3 @@ In the WordPress Dashboard, the setting is added to the bottom of Settings>Gener
 
 ###0.1
 * set up. 07/2013
-
