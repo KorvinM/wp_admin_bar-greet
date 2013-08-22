@@ -22,6 +22,7 @@ In the WordPress Dashboard, the setting is added to the bottom of Settings>Gener
 
 ##Todo
 * cleanup on deactivation
+
 ##Changelog
 ###1.2
 * change user-facing instances of 'Admin Bar' to 'Toolbar'
