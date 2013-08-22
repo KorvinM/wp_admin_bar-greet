@@ -92,8 +92,7 @@ if(class_exists('kvn_ydwh'))
 
         // Add the settings link to the plugins page
         function kvn_ydwh_settings_link($links){
-
-            $kvn_ydwh_settings_link = '<a href="options-general.php#ydwh_greet">Settings</a>';
+            $kvn_ydwh_settings_link = '<a href="options-general.php#ydwh_greet">Setting</a>';
             array_unshift($links, $kvn_ydwh_settings_link);
             return $links;
         }
