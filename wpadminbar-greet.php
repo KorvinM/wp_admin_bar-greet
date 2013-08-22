@@ -38,9 +38,26 @@ if(!class_exists('kvn_ydwh'))
         	// Initialize Settings
             require_once(sprintf("%s/settings.php", dirname(__FILE__)));
             $kvn_ydwh_Settings = new kvn_ydwh_Settings();
+			
+			/* replace WordPress Howdy in WordPress 3.3
+		   see http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/ */
+		
+			function kvn_replace_ydwh( $wp_admin_bar ) {
+				$ydwh_option = get_option('greeting');
+				$ydwh_my_account=$wp_admin_bar->get_node('my-account');
+				$ydwh_newtitle = str_replace( 'Howdy,', $ydwh_option, $ydwh_my_account->title );            
+				$wp_admin_bar->add_node( array(
+				'id' => 'my-account',
+				'title' => $ydwh_newtitle,
+				) );
+			}
+	
+			add_filter( 'admin_bar_menu', 'kvn_replace_ydwh');
         	
 		} // END public function __construct
-	    
+
+	   
+		
 		/**
 		 * Activate the plugin
 		 */
@@ -68,20 +85,20 @@ if(class_exists('kvn_ydwh'))
 	// instantiate the plugin class
 	$kvn_ydwh = new kvn_ydwh();
 	
-    if(isset($kvn_ydwh))
-    {
-    
-    // replace WordPress Howdy in WordPress 3.3, see http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/
-	function kvn_replace_ydwh( $wp_admin_bar ) {
-		$ydwh_option = get_option('greeting');
-		$ydwh_my_account=$wp_admin_bar->get_node('my-account');
-		$ydwh_newtitle = str_replace( 'Howdy,', $ydwh_option, $ydwh_my_account->title );            
-		$wp_admin_bar->add_node( array(
-			'id' => 'my-account',
-			'title' => $ydwh_newtitle,
-		) );
-	}
-	
-	add_filter( 'admin_bar_menu', 'kvn_replace_ydwh');
+    if(isset($kvn_ydwh)) {
+
+        // Add the settings link to the plugins page
+        function kvn_ydwh_settings_link($links){
+
+            $kvn_ydwh_settings_link = '<a href="options-general.php#ydwh_greet">Settings</a>';
+            array_unshift($links, $kvn_ydwh_settings_link);
+            return $links;
+        }
+
+        $kvn_ydwh_plugin = plugin_basename(__FILE__);
+        add_filter("plugin_action_links_$kvn_ydwh_plugin", 'kvn_ydwh_settings_link');
+
     }
+
+	
 }

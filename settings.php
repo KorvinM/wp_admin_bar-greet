@@ -25,7 +25,7 @@ if(!class_exists('kvn_ydwh_Settings'))
         	// add settings section
         	add_settings_section(
         	    'kvn_ydwh-section', 
-        	    'Admin Bar Greeting', 
+				'',
         	    array(&$this, 'settings_section_kvn_ydwh'), 
         	    'general'
         	);
@@ -33,7 +33,7 @@ if(!class_exists('kvn_ydwh_Settings'))
         	// add setting's fields
             add_settings_field(
                 'kvn_ydwh-greeting', 
-			  'Replacement Text:', 
+			    'Replacement Text:', 
                 array(&$this, 'settings_field_input_text'), 
                 'general', 
                 'kvn_ydwh-section',
@@ -47,8 +47,8 @@ if(!class_exists('kvn_ydwh_Settings'))
         
         public function settings_section_kvn_ydwh()
         {
-            // Think of this as help text for the section.
-		  echo '<em>Change the greeting in the admin bar. Default: <strong>Howdy</strong> <br>
+            // callback adding the title with id, and the help text 
+		  echo '<h3 id="ydwh_greet">Toolbar Greeting</h3><em>Change the greeting in the toolbar. Default: <strong>Howdy</strong> <br>
 Suggestions:</em> <strong>Logged in as</strong>, or <strong>Hello</strong>, or <strong>Ill-met by Moon-light, proud</strong>.';
         }
         
