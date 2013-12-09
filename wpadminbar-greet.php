@@ -37,32 +37,10 @@ if(!class_exists('kvn_ydwh'))
 		{
         	// Initialize Settings
             require_once(sprintf("%s/settings.php", dirname(__FILE__)));
-            $kvn_ydwh_Settings = new kvn_ydwh_Settings();
-			
-			
-	
-			add_filter( 'admin_bar_menu', 'kvn_replace_ydwh');
-        	
+            $kvn_ydwh_Settings = new kvn_ydwh_Settings();        	
 		} // END public function __construct
 
-	   		
-		/**
-		 * Activate the plugin
-		 */
-		public static function activate()
-		{
-			// Do nothing
-		} // END public static function activate
-	
-		/**
-		 * Deactivate the plugin
-		 */		
-		public static function deactivate()
-		{
-			// Do nothing
-		} // END public static function deactivate
-
-		public static function ydwh_uninstall ()
+	   	public static function ydwh_uninstall ()
 		{
 			if ( ! current_user_can( 'activate_plugins' ) )
 			    return;
@@ -76,9 +54,7 @@ if(!class_exists('kvn_ydwh'))
 
 if(class_exists('kvn_ydwh'))
 {
-	// Installation and uninstallation hooks
-	register_activation_hook(__FILE__, array('kvn_ydwh', 'activate'));
-	register_deactivation_hook(__FILE__, array('kvn_ydwh', 'deactivate'));
+	// Uninstallation hook
 	register_uninstall_hook(__FILE__, array('kvn_ydwh', 'ydwh_uninstall'));
 	// instantiate the plugin class
 	$kvn_ydwh = new kvn_ydwh();
@@ -100,6 +76,9 @@ if(class_exists('kvn_ydwh'))
 					) );	
 			}
 		}
+		
+		add_filter( 'admin_bar_menu', 'kvn_replace_ydwh');
+
         
 		// Add the settings link to the plugins page
         function kvn_ydwh_settings_link($links){
@@ -112,6 +91,5 @@ if(class_exists('kvn_ydwh'))
         add_filter("plugin_action_links_$kvn_ydwh_plugin", 'kvn_ydwh_settings_link');
 
     }
-
 	
 }
