@@ -61,6 +61,16 @@ if(!class_exists('kvn_ydwh'))
 		{
 			// Do nothing
 		} // END public static function deactivate
+
+		public static function ydwh_uninstall ()
+		{
+			if ( ! current_user_can( 'activate_plugins' ) )
+			    return;
+			delete_option('greeting');
+		} // END public static function ydwh_uninstall
+
+	
+		
 	} // END class kvn_ydwh
 } // END if(!class_exists('kvn_ydwh'))
 
@@ -69,7 +79,7 @@ if(class_exists('kvn_ydwh'))
 	// Installation and uninstallation hooks
 	register_activation_hook(__FILE__, array('kvn_ydwh', 'activate'));
 	register_deactivation_hook(__FILE__, array('kvn_ydwh', 'deactivate'));
-
+	register_uninstall_hook(__FILE__, array('kvn_ydwh', 'ydwh_uninstall'));
 	// instantiate the plugin class
 	$kvn_ydwh = new kvn_ydwh();
 	

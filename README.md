@@ -13,19 +13,23 @@ http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/
 
 ##Usage
 The default 'Howdy' greeting is retained if the Setting is empty.
+If spaces are accidentally entered and saved in the Setting, WordPress will ignore them.
+The plugin does not delete the setting on deactivation, but does on uninstall.
 
 ##Accessing the Setting
 
 In the WordPress Dashboard, the setting is added to the bottom of Settings>General.
 
 ##Todo
-* cleanup on uninstall
+* ~~cleanup on uninstall~~
 * restrict the change to the current user???
+* beef up security a little
 
 ##Changelog
 
 ###1.3
 * the main function is back outside the constructor function
+* plugin deletes greeting option when uninstalled
 
 ###1.2
 * change user-facing instances of 'Admin Bar' to 'Toolbar'
