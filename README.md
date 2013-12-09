@@ -21,7 +21,9 @@ In the WordPress Dashboard, the setting is added to the bottom of Settings>Gener
 ##Todo
 * cleanup on uninstall
 * restrict the change to the current user???
+
 ##Changelog
+
 ###1.3
 * the main function is back outside the constructor function
 
