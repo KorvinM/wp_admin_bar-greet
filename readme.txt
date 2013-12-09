@@ -2,7 +2,7 @@
 Requires at least: WordPress 3.3 
 Tested in: WordPress 3.5.2 
 Tested up to: 3.7 
-Stable tag: 1.2
+Stable tag: 1.3
 
 == Description == 
 

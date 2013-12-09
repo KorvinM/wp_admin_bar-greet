@@ -1,10 +1,6 @@
 
 Toolbar Greeting Plugin
 =========================
-Requires at least: WordPress 3.3
-Tested in: WordPress 3.5.2
-Tested up to: 3.7
-Stable tag: 1.2
 
 Teaching myself to write o-o code in a simple WP plugin.
 
@@ -23,9 +19,12 @@ The default 'Howdy' greeting is retained if the Setting is empty.
 In the WordPress Dashboard, the setting is added to the bottom of Settings>General.
 
 ##Todo
-* cleanup on deactivation
-
+* cleanup on uninstall
+* restrict the change to the current user???
 ##Changelog
+###1.3
+* the main function is back outside the constructor function
+
 ###1.2
 * change user-facing instances of 'Admin Bar' to 'Toolbar'
 * add settings link
