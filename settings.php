@@ -49,7 +49,6 @@ if(!class_exists('kvn_ydwh_Settings'))
         {
             // callback adding the title with id, and the help text 
 		  echo '<h3 id="ydwh_greet">Toolbar Greeting</h3><em>Change the greeting in the toolbar. Default: <strong>Howdy</strong> <br>
-Suggestions:</em> <strong>Logged in as</strong>, or <strong>Hello</strong>, or <strong>Ill-met by Moon-light, proud</strong>.';
         }
         
         /**

@@ -81,7 +81,7 @@ if(class_exists('kvn_ydwh'))
 		
 		function kvn_replace_ydwh( $wp_admin_bar ) {
 			$ydwh_option = get_option('greeting');
-			if ($ydwh_option != ''){//if option is not empty
+			if ($ydwh_option != ''){//if option is not empty. Could be !=false but less bytes this way & works as well. Both catch accidental spaces in an otherwise empty option.
 				$ydwh_my_account=$wp_admin_bar->get_node('my-account');
 				$ydwh_newtitle = str_replace( 'Howdy,', $ydwh_option, $ydwh_my_account->title );            
 				$wp_admin_bar->add_node( array(
