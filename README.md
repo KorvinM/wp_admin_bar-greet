@@ -6,6 +6,8 @@ Tested in: WordPress 3.5.2
 Tested up to: 3.7
 Stable tag: 1.2
 
+Teaching myself to write o-o code in a simple WP plugin.
+
 ##Description
 A WordPress plugin. Allows the user to change the default 'Howdy' greeting in the Toolbar. Go to Settings>General to configure with your chosen greeting!
 ##Important Notes
