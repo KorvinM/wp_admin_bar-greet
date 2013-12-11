@@ -24,6 +24,7 @@ In the WordPress Dashboard, the setting is added to the bottom of Settings>Gener
 * ~~cleanup on uninstall~~
 * restrict the change to the current user???
 * beef up security a little
+* make plugin translation ready
 
 ##Changelog
 
