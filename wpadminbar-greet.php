@@ -40,12 +40,12 @@ if(!class_exists('kvn_ydwh'))
             $kvn_ydwh_Settings = new kvn_ydwh_Settings();        	
 		} // END public function __construct
 
-	   	public static function ydwh_uninstall ()
+	   	public static function uninstall ()
 		{
 			if ( ! current_user_can( 'activate_plugins' ) )
 			    return;
 			delete_option('greeting');
-		} // END public static function ydwh_uninstall
+		} // END public static function uninstall
 
 	
 		
@@ -55,7 +55,7 @@ if(!class_exists('kvn_ydwh'))
 if(class_exists('kvn_ydwh'))
 {
 	// Uninstallation hook
-	register_uninstall_hook(__FILE__, array('kvn_ydwh', 'ydwh_uninstall'));
+	register_uninstall_hook(__FILE__, array('kvn_ydwh', 'uninstall'));
 	// instantiate the plugin class
 	$kvn_ydwh = new kvn_ydwh();
 	
