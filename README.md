@@ -14,7 +14,7 @@ http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/
 ##Usage
 
 In the WordPress Dashboard, the setting is added to the bottom of Settings>General.
-The default 'Howdy' greeting is retained until entering a setting. Saving with nothing entered will remove the greeting text.
+The default 'Howdy' greeting is retained until saving a setting. Saving qn empty setting will remove the greeting text.
 
 ##Todo
 * ~~cleanup on uninstall~~

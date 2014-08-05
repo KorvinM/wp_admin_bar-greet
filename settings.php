@@ -3,9 +3,7 @@ if(!class_exists('kvn_ydwh_Settings'))
 {
 	class kvn_ydwh_Settings
 	{
-		/**
-		 * Construct the plugin object
-		 */
+		
 		public function __construct()
 		{
 			// register actions
@@ -17,8 +15,7 @@ if(!class_exists('kvn_ydwh_Settings'))
          */
         public function admin_init()
         {
-        	
-			// register settings
+        	// register settings
         	register_setting('general', 'greeting', 'wp_filter_nohtml_kses');
  		       
 
@@ -42,13 +39,12 @@ if(!class_exists('kvn_ydwh_Settings'))
                 )
             );
 	
-	  
         } // END public static function activate
         
         public function settings_section_kvn_ydwh()
         {
             // callback adding the title with id, and the help text 
-		  echo '<h3 id="ydwh_greet">Toolbar Greeting</h3><em>Change the greeting in the toolbar. Default: <strong>Howdy</strong> <br>';
+		  echo '<h3 id="ydwh_greet">Toolbar Greeting</h3><em>Change the greeting in the toolbar. Default: <strong>Howdy</strong> </em><br>';
         }
         
         /**

@@ -14,7 +14,7 @@ Go to Settings>General to configure with your chosen greeting!
 In the WordPress Dasboard, the setting is added to the bottom of Settings>General
 
 == Usage ==
-The default 'Howdy' greeting is retained until entering a setting and saving a setting. Saving with nothing entered will remove the greeting text from your toolbar.
+The default 'Howdy' greeting is retained until entering and saving a setting. Saving with nothing entered will remove the greeting text from your toolbar.
 
 == Acknowledgments == 
 

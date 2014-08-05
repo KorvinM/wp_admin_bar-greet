@@ -46,7 +46,7 @@ if(!class_exists('kvn_ydwh'))
 		*/
 		
 		public function replace( $wp_admin_bar ) {
-			$ydwh_option = get_option('greeting');
+			$ydwh_option = get_option('greeting', 'Howdy,');
 			
 			$ydwh_my_account=$wp_admin_bar->get_node('my-account');
 			$ydwh_newtitle = str_replace( 'Howdy,', $ydwh_option, $ydwh_my_account->title );            
