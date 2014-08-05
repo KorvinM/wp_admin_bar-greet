@@ -1,8 +1,8 @@
 === Toolbar Greeting Plugin === 
 Requires at least: WordPress 3.3 
-Tested in: WordPress 3.5.2 
-Tested up to: 3.7 
-Stable tag: 1.3
+Tested in: WordPress 3.9 
+Tested up to: 4.0 
+Stable tag: 1.4
 
 == Description == 
 
@@ -14,9 +14,7 @@ Go to Settings>General to configure with your chosen greeting!
 In the WordPress Dasboard, the setting is added to the bottom of Settings>General
 
 == Usage ==
-The default 'Howdy' greeting is retained if the Setting is empty.
-Spaces accidentally entered and saved in the Setting will be ignored.
-The plugin does not delete the setting on deactivation, but does on uninstall.
+The default 'Howdy' greeting is retained until entering a setting and saving a setting. Saving with nothing entered will remove the greeting text from your toolbar.
 
 == Acknowledgments == 
 

@@ -3,7 +3,7 @@
 Plugin Name: Toolbar Greeting
 Plugin URI: 
 Description: Allows the user to change the default 'Howdy' greeting in the Toolbar. Go to Settings>General to configure with your chosen greeting!
-Version: 1.3
+Version: 1.4
 Author: Korvin M
 Author URI: korvin.org
 License: GPL2

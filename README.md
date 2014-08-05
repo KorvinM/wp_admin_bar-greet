@@ -12,13 +12,9 @@ The main function is adapted from a snippet intended for WP 3.3 and above
 http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/ 
 
 ##Usage
-The default 'Howdy' greeting is retained if the Setting is empty.
-If spaces are accidentally entered and saved in the Setting, WordPress will ignore them.
-The plugin does not delete the setting on deactivation, but does on uninstall.
-
-##Accessing the Setting
 
 In the WordPress Dashboard, the setting is added to the bottom of Settings>General.
+The default 'Howdy' greeting is retained until entering a setting. Saving with nothing entered will remove the greeting text.
 
 ##Todo
 * ~~cleanup on uninstall~~
@@ -28,6 +24,9 @@ In the WordPress Dashboard, the setting is added to the bottom of Settings>Gener
 
 ##Changelog
 
+###1.4
+* improved code standards
+* the Setting is now applied even if empty or just spaces, to give the user the option of removing the greeting altogether
 ###1.3
 * the main function is back outside the constructor function
 * plugin deletes greeting option when uninstalled
