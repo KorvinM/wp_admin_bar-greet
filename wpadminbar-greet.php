@@ -47,20 +47,17 @@ if(!class_exists('kvn_ydwh'))
 		
 		public function replace( $wp_admin_bar ) {
 			$ydwh_option = get_option('greeting');
-			if ($ydwh_option != ''){//if option is not empty. Could be !=false but less bits this way & works as well. Both catch accidental spaces in an otherwise empty option.
-				$ydwh_my_account=$wp_admin_bar->get_node('my-account');
-				$ydwh_newtitle = str_replace( 'Howdy,', $ydwh_option, $ydwh_my_account->title );            
-				$wp_admin_bar->add_node( array(
-					'id' => 'my-account',
-					'title' => $ydwh_newtitle,
-					) );	
-			}
+			
+			$ydwh_my_account=$wp_admin_bar->get_node('my-account');
+			$ydwh_newtitle = str_replace( 'Howdy,', $ydwh_option, $ydwh_my_account->title );            
+			$wp_admin_bar->add_node( array(
+				'id' => 'my-account',
+				'title' => $ydwh_newtitle,
+				) );	
+			
 		}
 		
-		
-		
-
-	   	public static function uninstall ()
+		public static function uninstall ()
 		{
 			if ( ! current_user_can( 'activate_plugins' ) )
 			    return;
