@@ -37,8 +37,28 @@ if(!class_exists('kvn_ydwh'))
 		{
         	// Initialize Settings
             require_once(sprintf("%s/settings.php", dirname(__FILE__)));
-            $kvn_ydwh_Settings = new kvn_ydwh_Settings();        	
+            $kvn_ydwh_Settings = new kvn_ydwh_Settings();add_filter( 'admin_bar_menu', array( $this, 'replace' ) );        	
 		} // END public function __construct
+		
+		
+		/* replace WordPress Howdy in WordPress 3.3
+	 	*  see http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/ 
+		*/
+		
+		public function replace( $wp_admin_bar ) {
+			$ydwh_option = get_option('greeting');
+			if ($ydwh_option != ''){//if option is not empty. Could be !=false but less bits this way & works as well. Both catch accidental spaces in an otherwise empty option.
+				$ydwh_my_account=$wp_admin_bar->get_node('my-account');
+				$ydwh_newtitle = str_replace( 'Howdy,', $ydwh_option, $ydwh_my_account->title );            
+				$wp_admin_bar->add_node( array(
+					'id' => 'my-account',
+					'title' => $ydwh_newtitle,
+					) );	
+			}
+		}
+		
+		
+		
 
 	   	public static function uninstall ()
 		{
@@ -60,25 +80,6 @@ if(class_exists('kvn_ydwh'))
 	$kvn_ydwh = new kvn_ydwh();
 	
     if(isset($kvn_ydwh)) {
-		
-		/* replace WordPress Howdy in WordPress 3.3
-	 	*  see http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/ 
-		*/
-		
-		function kvn_replace_ydwh( $wp_admin_bar ) {
-			$ydwh_option = get_option('greeting');
-			if ($ydwh_option != ''){//if option is not empty. Could be !=false but less bits this way & works as well. Both catch accidental spaces in an otherwise empty option.
-				$ydwh_my_account=$wp_admin_bar->get_node('my-account');
-				$ydwh_newtitle = str_replace( 'Howdy,', $ydwh_option, $ydwh_my_account->title );            
-				$wp_admin_bar->add_node( array(
-					'id' => 'my-account',
-					'title' => $ydwh_newtitle,
-					) );	
-			}
-		}
-		
-		add_filter( 'admin_bar_menu', 'kvn_replace_ydwh');
-
         
 		// Add the settings link to the plugins page
         function kvn_ydwh_settings_link($links){
