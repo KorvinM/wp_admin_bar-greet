@@ -27,6 +27,7 @@ The default 'Howdy' greeting is retained until entering a setting. Saving with n
 ###1.4
 * improved code standards
 * the Setting is now applied even if empty or just spaces, to give the user the option of removing the greeting altogether
+
 ###1.3
 * the main function is back outside the constructor function
 * plugin deletes greeting option when uninstalled
