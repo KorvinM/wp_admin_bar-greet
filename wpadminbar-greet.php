@@ -1,14 +1,13 @@
 <?php
 /*
 Plugin Name: Toolbar Greeting
-Plugin URI: 
 Description: Allows the user to change the default 'Howdy' greeting in the Toolbar. Go to Settings>General to configure with your chosen greeting!
 Version: 1.4
 Author: Korvin M
-Author URI: korvin.org
+Author URI: http://korvin.org
 License: GPL2
-*/
-/*
+
+*
 
 Plugin template courtesy Francis Yaconiello
 
@@ -28,23 +27,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 if(!class_exists('kvn_ydwh'))
 {
-	class kvn_ydwh
-	{
-		/**
-		 * Construct the plugin object
-		 */
-		public function __construct()
-		{
-        	// Initialize Settings
+	class kvn_ydwh{
+		
+		public function __construct() {
             require_once(sprintf("%s/settings.php", dirname(__FILE__)));
-            $kvn_ydwh_Settings = new kvn_ydwh_Settings();add_filter( 'admin_bar_menu', array( $this, 'replace' ) );        	
-		} // END public function __construct
-		
-		
-		/* replace WordPress Howdy in WordPress 3.3
-	 	*  see http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/ 
+            $kvn_ydwh_Settings = new kvn_ydwh_Settings();// Initialize Settings
+            add_filter( 'admin_bar_menu', array( $this, 'replace' ) );        	
+		}// END public function __construct
+	
+		/*
+		Replace. See http://wp-snippets.com/replace-howdy-in-wordpress-3-3-admin-bar/
 		*/
-		
 		public function replace( $wp_admin_bar ) {
 			$ydwh_option = get_option('greeting', 'Howdy,');
 			
@@ -54,40 +47,29 @@ if(!class_exists('kvn_ydwh'))
 				'id' => 'my-account',
 				'title' => $ydwh_newtitle,
 				) );	
-			
 		}
 		
-		public static function uninstall ()
-		{
+		public static function uninstall () {
 			if ( ! current_user_can( 'activate_plugins' ) )
 			    return;
 			delete_option('greeting');
 		} // END public static function uninstall
-
-	
 		
 	} // END class kvn_ydwh
 } // END if(!class_exists('kvn_ydwh'))
 
 if(class_exists('kvn_ydwh'))
 {
-	// Uninstallation hook
 	register_uninstall_hook(__FILE__, array('kvn_ydwh', 'uninstall'));
-	// instantiate the plugin class
-	$kvn_ydwh = new kvn_ydwh();
-	
-    if(isset($kvn_ydwh)) {
-        
-		// Add the settings link to the plugins page
-        function kvn_ydwh_settings_link($links){
-            $kvn_ydwh_settings_link = '<a href="options-general.php#ydwh_greet">Setting</a>';
-            array_unshift($links, $kvn_ydwh_settings_link);
-            return $links;
-        }
+	$kvn_ydwh = new kvn_ydwh();// instantiate the plugin class
+	if(isset($kvn_ydwh)) {
+		function kvn_ydwh_settings_link($links){// Add the settings link to the plugins page
+			$kvn_ydwh_settings_link = '<a href="options-general.php#ydwh_greet">Setting</a>';
+			array_unshift($links, $kvn_ydwh_settings_link);
+			return $links;
+		}
 
-        $kvn_ydwh_plugin = plugin_basename(__FILE__);
-        add_filter("plugin_action_links_$kvn_ydwh_plugin", 'kvn_ydwh_settings_link');
-
-    }
-	
+		$kvn_ydwh_plugin = plugin_basename(__FILE__);
+		add_filter("plugin_action_links_$kvn_ydwh_plugin", 'kvn_ydwh_settings_link');
+	}
 }
