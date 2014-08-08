@@ -30,9 +30,9 @@ if(!class_exists('kvn_ydwh'))
 	class kvn_ydwh{
 		
 		public function __construct() {
-            require_once(sprintf("%s/settings.php", dirname(__FILE__)));
-            $kvn_ydwh_Settings = new kvn_ydwh_Settings();// Initialize Settings
-            add_filter( 'admin_bar_menu', array( $this, 'replace' ) );        	
+			require_once(sprintf("%s/settings.php", dirname(__FILE__)));
+			$kvn_ydwh_Settings = new kvn_ydwh_Settings();// Initialize Settings
+			add_filter( 'admin_bar_menu', array( $this, 'replace' ) );        	
 		}// END public function __construct
 	
 		/*
