@@ -27,9 +27,9 @@ if(!class_exists('kvn_ydwh_Settings'))
 				)
 			);
 		}// END public function admin_init
-        
-        public function settings_section_kvn_ydwh() {// callback to add title and help text
-		  echo '<h3 id="ydwh_greet">Toolbar Greeting</h3><em>Change the greeting in the toolbar. Default: <strong>Howdy</strong> </em><br>';
+		
+		public function settings_section_kvn_ydwh() {// callback to add title and help text
+			echo '<h3 id="ydwh_greet">Toolbar Greeting</h3><em>Change the greeting in the toolbar. Default: <strong>Howdy</strong> </em><br>';
 		}
 
 		public function settings_field_input_text($args) {//provides text inputs for settings fields
