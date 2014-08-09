@@ -8,7 +8,7 @@ if(!class_exists('kvn_ydwh_Settings'))
 		}// END public function __construct
 		
 		public function admin_init() {//hook into WP's admin_init action hook
-        	register_setting('general', 'greeting', 'wp_filter_nohtml_kses');//maybe not the best sanitise filter to use
+			register_setting('general', 'greeting', 'wp_filter_nohtml_kses');//maybe not the best sanitise filter to use
 			add_settings_section(
         	    'kvn_ydwh-section',
 				'',
