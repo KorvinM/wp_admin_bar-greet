@@ -10,15 +10,15 @@ if(!class_exists('kvn_ydwh_Settings'))
 		public function admin_init() {//hook into WP's admin_init action hook
 			register_setting('general', 'greeting', 'wp_filter_nohtml_kses');//maybe not the best sanitise filter to use
 			add_settings_section(
-        	    'kvn_ydwh-section',
+				'kvn_ydwh-section',
 				'',
-        	    array(&$this, 'settings_section_kvn_ydwh'),
-        	    'general'
+				array(&$this, 'settings_section_kvn_ydwh'),
+				'general'
         	);
         	add_settings_field(
-                'kvn_ydwh-greeting',
-			    'Replacement Text:',
-                array(&$this, 'settings_field_input_text'),
+				'kvn_ydwh-greeting',
+				'Replacement Text:',
+				array(&$this, 'settings_field_input_text'),
                 'general',
                 'kvn_ydwh-section',
                 array(
