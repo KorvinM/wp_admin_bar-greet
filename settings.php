@@ -18,7 +18,7 @@ if(!class_exists('kvn_ydwh_Settings'))
 			
 			add_settings_field(
 				'kvn_ydwh-greeting',
-				'Replacement Text:',
+				'Replacement Text',
 				array(&$this, 'settings_field_input_text'),
 				'general',
 				'kvn_ydwh-section',
