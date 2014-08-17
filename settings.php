@@ -12,7 +12,7 @@ if(!class_exists('kvn_ydwh_Settings'))
 			add_settings_section(
 				'kvn_ydwh-section',
 				'',
-				array(&$this, 'settings_section_kvn_ydwh'),
+				array(&$this, 'settings_section'),
 				'general'
 			);
 			
@@ -28,7 +28,7 @@ if(!class_exists('kvn_ydwh_Settings'))
 			);
 		}// END public function admin_init
 		
-		public function settings_section_kvn_ydwh() {// callback to add title and help text
+		public function settings_section() {// callback to add title and help text
 			echo '<h3 id="ydwh_greet">Toolbar Greeting</h3><em>Change the greeting in the toolbar. Default: <strong>Howdy</strong> </em><br>';
 		}
 
